@@ -1,7 +1,7 @@
-import express from "express";
-import dotenv from "dotenv";
-import cors from "cors";
 import { Chainrails, crapi } from "@chainrails/sdk";
+import cors from "cors";
+import dotenv from "dotenv";
+import express from "express";
 
 dotenv.config();
 const app = express();
@@ -17,19 +17,22 @@ app.listen(port, () => {
 
 app.get("/", (req, res) => res.send("Chainrails Session Server"));
 
-app.post("/session", async (req, res) => {
-  const { amount, destinationChain, recipient, token } = req.body;
+app.get("/session", async (req, res) => {
   const api_key = process.env.CHAINRAILS_API_KEY;
+  const amount = "100";
+  const recipient = "0x...";
+  const destinationChain = "BASE";
+  const token = "USDC";
 
   Chainrails.config({
     api_key,
   });
 
   const session = await crapi.auth.getSessionToken({
-    amount: process.env.CHAINRAILS_FIXED_AMOUNT || amount,
-    recipient: process.env.CHAINRAILS_FIXED_RECIPIENT || recipient,
-    destinationChain: process.env.CHAINRAILS_FIXED_DESTINATION_CHAIN || destinationChain,
-    token: process.env.CHAINRAILS_FIXED_TOKEN || token,
+    amount: amount,
+    recipient: recipient,
+    destinationChain: destinationChain,
+    token: token,
   });
 
   res.send(session);

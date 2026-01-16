@@ -41,13 +41,6 @@ CHAINRAILS_API_KEY=your_api_key_here
 
 # CORS Configuration
 CHAINRAILS_DOMAIN_WHITELIST=http://localhost:3000,https://yourdomain.com
-
-# Optional: Fixed Parameters
-# If set, these override request body parameters
-CHAINRAILS_FIXED_AMOUNT=1000000
-CHAINRAILS_FIXED_RECIPIENT=0x...
-CHAINRAILS_FIXED_DESTINATION_CHAIN=BASE
-CHAINRAILS_FIXED_TOKEN=USDC
 ```
 
 ## ⚙️ Configuration
@@ -59,10 +52,6 @@ CHAINRAILS_FIXED_TOKEN=USDC
 | `CHAINRAILS_API_KEY` | ✅ | Your Chainrails API key for authentication |
 | `PORT` | ❌ | Server port (default: 4000) |
 | `CHAINRAILS_DOMAIN_WHITELIST` | ❌ | Comma-separated list of allowed origins for CORS |
-| `CHAINRAILS_FIXED_AMOUNT` | ❌ | Fixed token amount (overrides request body) |
-| `CHAINRAILS_FIXED_RECIPIENT` | ❌ | Fixed recipient address (overrides request body) |
-| `CHAINRAILS_FIXED_DESTINATION_CHAIN` | ❌ | Fixed destination chain (overrides request body) |
-| `CHAINRAILS_FIXED_TOKEN` | ❌ | Fixed token type (overrides request body) |
 
 ## 💡 Usage
 
@@ -86,7 +75,6 @@ The project includes a `vercel.json` configuration file for easy deployment to V
 3. Add environment variables in Vercel dashboard:
    - `CHAINRAILS_API_KEY`
    - `CHAINRAILS_DOMAIN_WHITELIST`
-   - Any other configuration variables
 
 ## 🔒 Security Considerations
 
