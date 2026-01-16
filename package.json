@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0",
-    "@chainrails/sdk": "^0.0.40",
+    "@chainrails/sdk": "^0.2.4",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6"
   }
